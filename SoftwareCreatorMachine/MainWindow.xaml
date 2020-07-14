@@ -1,0 +1,77 @@
+﻿<Window x:Name="MainFrame" x:Class="SoftwareCreatorMachine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoftwareCreatorMachine"
+        mc:Ignorable="d"
+        Title="SoftwareCreatorMachine" Height="450" Width="800" ResizeMode="NoResize" Topmost="True" Background="#FF939494" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" WindowState="Normal">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="639*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LabelTitle" Content="Software Machine" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top" Width="200" FontSize="24" FontWeight="Bold" FontFamily="Ink Free"/>
+        <GroupBox x:Name="GroupBoxGames" Header="Games" FontWeight="Bold" Margin="121,79,347,201">
+            <Grid Height="27" Margin="0,0,87,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="34*"/>
+                    <ColumnDefinition Width="35*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="ActionGames" Content="Action" Margin="10,-36,0,42" Grid.ColumnSpan="2" FontSize="10"/>
+                <TextBox x:Name="TextAction" TextWrapping="Wrap" Grid.Column="1" Margin="25,-33,-49,0" FontSize="10" IsReadOnly="True" VerticalAlignment="Top" Grid.ColumnSpan="2" RenderTransformOrigin="2.817,0.839"/>
+                <Label x:Name="RPGGames" Content="RPG" Margin="12,-4,1,10" Grid.ColumnSpan="3" FontSize="10"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="GroupBoxDevSoft" Header="Developer Software" FontWeight="Bold" Margin="507,79,7,201" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Margin="0,0,-2,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="IDEEditor" Content="IDE Editors" Margin="10,10,87,100" Grid.ColumnSpan="2" FontSize="10"/>
+                <TextBox x:Name="TextIDE" TextWrapping="Wrap" IsReadOnly="True" FontSize="10" Margin="80,13,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="72"/>
+                <Label x:Name="MusicMixer" Content="Music Mixer" Margin="10,45,80,65" FontSize="10"/>
+                <TextBox x:Name="TextMusicMixer" TextWrapping="Wrap" IsReadOnly="True" FontSize="10" Margin="80,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="72"/>
+                <Label x:Name="Drivers" Content="Drivers" Margin="10,79,87,31" FontSize="10"/>
+                <TextBox x:Name="TextDriver" TextWrapping="Wrap" IsReadOnly="True" FontSize="10" Margin="80,85,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="72"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="GroupBoxDevelopment" Header="Development" Margin="104,238,2,57" FontWeight="Bold" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Margin="2,0,-2,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="132*"/>
+                    <ColumnDefinition Width="61*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="LabelQuantity" Content="Quantity" Margin="16,10,320,74"/>
+                <TextBox x:Name="TextBoxQuantity" Text="0" TextWrapping="Wrap" Margin="78,14,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="26"/>
+                <Label x:Name="LabelType" Content="Type" Margin="134,10,219,74"/>
+                <ComboBox x:Name="ComboType" HorizontalAlignment="Left" Margin="169,12,0,0" VerticalAlignment="Top" Width="86"/>
+                <Label x:Name="LabelPrice" Content="Price" Margin="280,10,75,74"/>
+                <TextBox x:Name="TextBoxPrice" Text="0" TextWrapping="Wrap" Margin="323,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="26"/>
+                <ListBox x:Name="ListBoxSale" Margin="16,47,22,18"/>
+                <Label x:Name="LabelTotal" Content="Total" Margin="381,47,160,37" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="TextBoxTotal" TextWrapping="Wrap" Margin="30,52,97,41" TextChanged="TextBoxTotal_TextChanged" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="55" Height="19"/>
+                <Button x:Name="ButtonAddToDev" Content="Add Dev" HorizontalAlignment="Center" Margin="94,-61,0,0" VerticalAlignment="Center" Width="80" Grid.Column="1"/>
+                <Button x:Name="ButtonRemoveFromDev" Content="Remove Dev" Margin="91,53,0,0" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Center" Width="88"/>
+                <Button x:Name="ButtonRelease" Content="Release" HorizontalAlignment="Center" Margin="94,88,0,0" VerticalAlignment="Center" Width="81" IsDefault="True" Grid.Column="1" Height="20"/>
+            </Grid>
+        </GroupBox>
+        <TextBox x:Name="TextRPG" TextWrapping="Wrap" Width="61" Margin="187,148,0,0" FontSize="10" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Menu x:Name="menu" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800" Height="18" Grid.ColumnSpan="4">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Software">
+                <MenuItem Header="Develop">
+                    <MenuItem Header="Games">
+                         <MenuItem Header="Action"></MenuItem>
+                         <MenuItem Header="RPG"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Developer Software"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Stop"></MenuItem>
+            </MenuItem>
+
+        </Menu>
+    </Grid>
+</Window>
